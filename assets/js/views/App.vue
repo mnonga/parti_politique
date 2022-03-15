@@ -100,13 +100,13 @@ export default {
       firstName: null,
       name: null,
       lastName: null,
-      phoneNumber: "string",
-      email: "string",
-      birthDate: "2022-02-26T12:27:43.927Z",
-      subscriptionDate: "2022-02-26T12:27:43.927Z",
+      phoneNumber: null,
+      email: null,
+      birthDate: null,
+      subscriptionDate: null,
       sexe: "",
-      cellule: "string",
-      grade: "string",
+      cellule: null,
+      grade: null,
       cellules: [],
       saving: false,
       loading: false
@@ -116,6 +116,9 @@ export default {
     this.loadCellules()
   },
   methods: {
+    resetForm(){
+      this.firstName = this.name = this.lastName = this.phoneNumber = this.email = this.birthDate = this.subscriptionDate = this.sexe = this.cellule = this.grade ;
+    },
     loadCellules() {
       console.log('loading cellules')
       let _this = this
@@ -132,6 +135,7 @@ export default {
     postForm() {
       let _this = this
       this.saving = true
+
       postMembres({
         firstName: this.firstName,
         lastName: this.lastName,
@@ -143,9 +147,10 @@ export default {
         birthDate: new Date(this.birthDate).toISOString(),
         subscriptionDate: new Date(this.subscriptionDate).toISOString()
       }).then(function (data) {
-
+        _this.toastSuccess("Enregistrement reussi !");
+        _this.resetForm();
       }).catch(function (response) {
-
+        _this.toastDanger("Enregistrement échoué !");
       }).finally(function () {
         _this.saving = false
       })

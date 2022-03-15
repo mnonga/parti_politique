@@ -6,6 +6,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\MembreRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
+
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 
 /**
  * @ORM\Entity(repositoryClass=MembreRepository::class)
@@ -14,7 +19,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *      collectionOperations={"get",
 "post"={"security": "is_granted('PUBLIC_ACCESS')",
 "security_message": "Only admins can add books.",}
- *     })
+ *     },
+ *     subresourceOperations={"formats"={"json"},
+"GET" ={"normalization_context"={"groups"={"membre:read"}}}
+ *     }
+ * )
+ * @ApiFilter(SearchFilter::class, properties={"firstName"="partial", "name"="partial", "lastName"="partial", "cellule.name" = "exact"})
+ * @ApiFilter(DateFilter::class, properties={"subscriptionDate"})
+ *@ApiFilter(OrderFilter::class, properties={"subscriptionDate"="DESC", "firstName","name","lastName"}, arguments= {"orderParameterName" = "order"})
  */
 class Membre
 {

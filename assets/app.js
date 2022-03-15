@@ -48,7 +48,8 @@ const app = new Vue({
     // delimiters: ["${", "}"],
     components: {
         App: () => import(/* webpackChunkName: "app_vue" */"./js/views/App"),
-        App2: () => import(/* webpackChunkName: "app2_vue" */"./js/views/App2")
+        App2: () => import(/* webpackChunkName: "app2_vue" */"./js/views/App2"),
+        Stat: () => import(/* webpackChunkName: "stat_vue" */"./js/views/Stat")
     }
 });
 

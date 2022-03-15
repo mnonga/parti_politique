@@ -8,36 +8,26 @@
     <div class="mt-16 w-full md:w-10/12 mx-auto">
       <div
             class="rounded-lg p-5 bg-white shadow-lg w-full mx-auto space-y-5">
-        <h3 class="text-lg font-bold text-primary">Liste des membres
-          <a href="/membres/enregistrement" class="float-right border border-primary text-sm align-middle rounded px-2 py-1"><i class="fa fa-plus"></i> Nouveau membre</a>
-          <a href="/membres/stats" class="float-right border border-primary text-sm align-middle rounded px-2 py-1"><i class="fa fa-chart-bar"></i> Stats</a></h3>
+        <h3 class="text-lg font-bold text-primary">Statistiques des membres par cellules</h3>
         <table class="w-full">
           <thead>
           <tr class="bg-primary text-white font-semibold">
             <td class="px-5 py-2">#</td>
-            <td class="px-5 py-2">Nom</td>
-            <td class="px-5 py-2">Téléphone</td>
-            <td class="px-5 py-2">Email</td>
-            <td class="px-5 py-2">Province/District</td>
-            <td class="px-5 py-2">Commune/Cellule</td>
-            <td class="px-5 py-2">Date d'adhésion</td>
+            <td class="px-5 py-2">Cellule</td>
+            <td class="px-5 py-2">Effectif</td>
           </tr>
           </thead>
           <tbody>
           <tr class="even:bg-gray-100 hover:bg-gray-200 border-b border-gray-200" v-for="item in items" :key="item.id">
             <td class="px-5 py-2">{{item.id}}</td>
-            <td class="px-5 py-2">{{item.firstName}} {{item.name}} {{item.lastName}}</td>
-            <td class="px-5 py-2">{{item.phoneNumber}}</td>
-            <td class="px-5 py-2">{{item.email}}</td>
-            <td class="px-5 py-2">{{item.cellule.commune.district.province.name}}/{{item.cellule.commune.district.name}}</td>
-            <td class="px-5 py-2">{{item.cellule.commune.name}}/{{item.cellule.name}}</td>
-            <td class="px-5 py-2">{{getDate(item.subscriptionDate)}}</td>
+            <td class="px-5 py-2">{{item.name}}</td>
+            <td class="px-5 py-2">{{item.count}}</td>
           </tr>
           <tr v-if="loading" class="">
             <td colspan="7" class="text-center py-10"><i class="fa fa-spinner fa-spin text-black text-2xl"></i></td>
           </tr>
           <tr v-if="!loading && !items.length" class="">
-            <td colspan="7" class="text-center py-10">Aucun membre à afficher !</td>
+            <td colspan="7" class="text-center py-10">Aucune statistique à afficher !</td>
           </tr>
           </tbody>
         </table>
@@ -52,7 +42,7 @@
 </template>
 
 <script>
-import {getCellules, getMembres, postMembres} from "../utils";
+import {getCellules, getMembres, getStats, postMembres} from "../utils";
 
 export default {
   name: "App",
@@ -87,7 +77,7 @@ export default {
       let _this = this
       this.loading = true
       this.items = []
-      getMembres().then(function (data) {
+      getStats().then(function (data) {
         _this.items = data
         console.log('loading cellules then')
       }).catch(function (response) {

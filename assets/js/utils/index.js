@@ -43,6 +43,28 @@ export function getCellules(page=1){
 }
 
 
+export function getStats(page=1){
+    return new Promise((resolve, reject) => {
+        let data = {
+            page
+        }
+        global.$.ajax({
+            type: "GET",
+            url: `${location.origin}/api/stats`,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                // 'Authorization': `Bearer ${global.apiToken}`
+            },
+            data: data
+        }).done(function (data) {
+            resolve(data)
+        }).fail(function (response) {
+            reject(response)
+        })
+    })
+}
+
 /**
  *
  * @param {{firstName: string, name: string, lastName: string, phoneNumber: string, email: string, birthDate: string, subscriptionDate: string, sexe: string, cellule: string, grade: string}} form

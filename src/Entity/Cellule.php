@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use App\Repository\CelluleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -12,7 +13,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=CelluleRepository::class)
  * @ApiResource(formats={"json"},
- * normalizationContext={"groups" = {"membre:read"}}
+ * normalizationContext={"groups" = {"membre:read"}},
+ *     subresourceOperations={
+            "GET" ={"normalization_context"={"groups"={"membre:read"}}}
+ *     }
  * )
  */
 class Cellule
@@ -39,6 +43,7 @@ class Cellule
     private $commune;
 
     /**
+     * @ApiSubresource()
      * @ORM\OneToMany(targetEntity=Membre::class, mappedBy="cellule", orphanRemoval=true)
      */
     private $membres;
