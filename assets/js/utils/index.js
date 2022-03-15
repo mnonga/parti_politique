@@ -1,7 +1,13 @@
-export function getMembres(page=1){
+export function getMembres(searchText=null, page=1){
     return new Promise((resolve, reject) => {
         let data = {
             page
+        }
+        if(searchText){
+            // data.firstName = searchText
+            // data.name = searchText
+            // data.lastName = searchText
+            data["cellule.name"] = searchText
         }
         global.$.ajax({
             type: "GET",

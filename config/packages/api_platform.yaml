@@ -31,3 +31,5 @@ api_platform:
             apiKey2:
                 name: 'X-AUTH-TOKEN'
                 type: header
+    defaults:
+        pagination_enabled: false

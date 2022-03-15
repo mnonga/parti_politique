@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="h-16 px-10 fixed top-0 shadow bg-white flex items-center w-full">
-      <img src="/images/logo.png" alt="" class="w-12 h-12 mr-3">
+      <router-link :to="{name:'Home'}"><img src="/images/logo.png" alt="" class="w-12 h-12 mr-3"></router-link>
       <div class="font-bold text-lg">Ecide</div>
     </div>
 
@@ -94,7 +94,7 @@
 import {getCellules, postMembres} from "../utils";
 
 export default {
-  name: "App",
+  name: "CreateMembre",
   data() {
     return {
       firstName: null,

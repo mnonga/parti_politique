@@ -5,14 +5,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/utils/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/views/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/views/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/views/App2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/views/App2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/views/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/views/CreateMembre.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/views/App2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/views/ListMembre.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/views/Stat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/views/StatMembre.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LipaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LipaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Cellule.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cellule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Membre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Membre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MembreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MembreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LipaController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lipa/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lipa/list.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lipa/stats.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,12 +146,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/lipa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/router" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\michee\dev\www\jc\parti_politique\assets\js\router" />
+      <recent name="D:\michee\dev\www\jc\parti_politique\assets\js" />
       <recent name="D:\michee\dev\www\jc\parti_politique\templates\lipa" />
       <recent name="D:\michee\dev\www\jc\parti_politique\assets\js\views" />
       <recent name="D:\michee\dev\www\jc\parti_politique\public\images" />
@@ -167,7 +171,9 @@
       <workItem from="1645782165353" duration="13879000" />
       <workItem from="1645877040838" duration="8000" />
       <workItem from="1645877774237" duration="11130000" />
-      <workItem from="1647292419084" duration="6733000" />
+      <workItem from="1647292419084" duration="6865000" />
+      <workItem from="1647335692557" duration="399000" />
+      <workItem from="1647338710575" duration="4231000" />
     </task>
     <servers />
   </component>
